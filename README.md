@@ -36,3 +36,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Links
 
 [Tailwind just-in-time mode](https://v2.tailwindcss.com/docs/just-in-time-mode)
+
+[Theo - ping․gg >>> Building a MODERN Full Stack App for FREE w/ NextJS 12, Typescript, Prisma and more](https://www.youtube.com/watch?v=PKy2lYEnhgs)
