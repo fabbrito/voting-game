@@ -1,4 +1,4 @@
-const MAX_POKEDEX_ID = 493;
+export const MAX_POKEDEX_ID = 493;
 
 export const getRandomPokemon = (notThisOne?: number): number => {
   const pokemonId = Math.floor(Math.random() * MAX_POKEDEX_ID) + 1;
