@@ -1,5 +1,5 @@
 import * as trpc from "@trpc/server";
-import { z } from "zod";
+import { string, z } from "zod";
 
 import { MAX_POKEDEX_ID } from "@/utils/pokemonUtils";
 import { PokemonClient } from "pokenode-ts";
@@ -21,11 +21,12 @@ export const appRouter = trpc
     input: z.object({
       id: z.number().min(1).max(MAX_R6OPERATORS_ID),
     }),
+    output: z.object({ name: z.string(), svg: z.string() }),
     async resolve({ input }) {
       const operator = Object.values(r6Operators)[input.id];
       const operatorSvg = operator.toSVG();
-      if (typeof operatorSvg !== "string") return { name: operator.name, svgURIencoded: "" };
-      return { name: operator.name, svgURIencoded: encodeURIComponent(operatorSvg) };
+      if (typeof operatorSvg !== "string") return { name: operator.name, svg: "" };
+      return { name: operator.name, svg: encodeURIComponent(operatorSvg) };
     },
   })
   .query("get-r6-operator-by-name", {

@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <div className="w-48 h-full flex flex-col">
           <picture>
             {/* <img src={first.data?.sprites.front_default ?? ""} alt={first.data?.name} className="w-full" /> */}
-            <img src={`data:image/svg+xml;utf8,${first.data?.svgURIencoded}`} alt={first.data?.name} />
+            <img src={`data:image/svg+xml;utf8,${first.data?.svg}`} alt={first.data?.name} />
           </picture>
           <div className="text-xl text-center capitalize">{first.data?.name}</div>
         </div>
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         <div className="w-48 h-full flex flex-col">
           <picture>
             {/* <img src={second.data?.sprites.front_default ?? ""} alt={second.data?.name} className="w-full" /> */}
-            <img src={`data:image/svg+xml;utf8,${second.data?.svgURIencoded}`} alt={second.data?.name} />
+            <img src={`data:image/svg+xml;utf8,${second.data?.svg}`} alt={second.data?.name} />
           </picture>
           <div className="text-xl text-center capitalize">{second.data?.name}</div>
         </div>
