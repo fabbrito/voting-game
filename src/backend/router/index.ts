@@ -1,5 +1,5 @@
 import * as trpc from "@trpc/server";
-import { string, z } from "zod";
+import { z } from "zod";
 
 import { MAX_POKEDEX_ID } from "@/utils/pokemonUtils";
 import { PokemonClient } from "pokenode-ts";
@@ -30,9 +30,16 @@ export const appRouter = trpc
     },
   })
   .query("get-r6-operator-by-name", {
-    input: z.object({ id: z.string().min(1).max(100) }),
+    input: z.object({
+      name: z.string().refine(
+        (op: string) => Object.keys(r6Operators).includes(op.toLowerCase()),
+        (val) => ({
+          message: `${val} is not a valid operator name.`,
+        })
+      ),
+    }),
     async resolve({ input }) {
-      const operator = r6Operators[input.id.toLowerCase() as keyof typeof r6Operators];
+      const operator = r6Operators[input.name.toLowerCase() as keyof typeof r6Operators];
       return operator;
     },
   });
