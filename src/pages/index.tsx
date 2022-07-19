@@ -25,7 +25,7 @@ const Home: NextPage = () => {
   // const second = trpc.useQuery(["get-r6-operator-by-id", { id: secondId }]);
   // const test = trpc.useQuery(["get-r6-operator-by-name", {name: "ace"}]);
   // if (!test.isLoading) console.log(test);
-  // <img src={`data:image/svg+xml;utf8,${pokemon.svg}`} alt={pokemon.name} />
+  // <img src={`data:image/svg+xml;utf8,${data.svg}`} alt={data.name} />
 
   const voteForRoundest = (selected: number) => {
     // TODO: Fire mutations to persist changes

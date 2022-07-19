@@ -1,22 +1,15 @@
 import * as trpc from "@trpc/server";
 import { z } from "zod";
+import { prisma } from "@/backend/utils/prisma";
 
 import { MAX_POKEDEX_ID } from "@/utils/pokemonUtils";
 import { PokemonClient } from "pokenode-ts";
 
-import r6Operators from "r6operators";
+// TODO: Change data to R6 ops
+/* import r6Operators from "r6operators";
 import { MAX_R6OPERATORS_ID } from "@/utils/r6OperatorsUtils";
 
-export const appRouter = trpc
-  .router()
-  .query("get-pokemon-by-id", {
-    input: z.object({ id: z.number().min(1).max(MAX_POKEDEX_ID) }),
-    async resolve({ input }) {
-      const api = new PokemonClient();
-      const pokemon = await api.getPokemonById(input.id);
-      return { name: pokemon.name, sprites: pokemon.sprites };
-    },
-  })
+export const appRouter = trpc.router()
   .query("get-r6-operator-by-id", {
     input: z.object({
       id: z.number().min(1).max(MAX_R6OPERATORS_ID),
@@ -41,6 +34,32 @@ export const appRouter = trpc
     async resolve({ input }) {
       const operator = r6Operators[input.name.toLowerCase() as keyof typeof r6Operators];
       return operator;
+    },
+  }); */
+
+export const appRouter = trpc
+  .router()
+  .query("get-pokemon-by-id", {
+    input: z.object({ id: z.number().min(1).max(MAX_POKEDEX_ID) }),
+    async resolve({ input }) {
+      const api = new PokemonClient();
+      const pokemon = await api.getPokemonById(input.id);
+      return { name: pokemon.name, sprites: pokemon.sprites };
+    },
+  })
+  .mutation("cast-vote", {
+    input: z.object({
+      votedFor: z.number().min(1).max(MAX_POKEDEX_ID),
+      votedAgainst: z.number().min(1).max(MAX_POKEDEX_ID),
+    }),
+    async resolve({ input }) {
+      const voteInDb = await prisma.vote.create({
+        data: {
+          votedFor: input.votedFor,
+          votedAgainst: input.votedAgainst
+        }
+      });
+      return { success: true, vote: voteInDb };
     },
   });
 

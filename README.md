@@ -1,10 +1,19 @@
 # Voting Game
 
+## Db commands
+
+```ps
+pscale connect roundest main --port 3309
+pscale connect roundest fab-dev --port 3310
+```
+
 ## Important links
 
 [tRPC >>> Usage with Next.js](https://trpc.io/docs/nextjs)
 
 [github/marcopixel >>> r6operators v2.2.0](https://github.com/marcopixel/r6operators)
+
+[github/TheoBr/roundest-mon >>> Roundest - Which Pokémon is most round?](https://github.com/TheoBr/roundest-mon)
 
 [github/colinhacks >>> Zod - TypeScript-first schema validation with static type inference](https://github.com/colinhacks/zod)
 
@@ -14,12 +23,14 @@
 
 [Theo - ping․gg >>> Building a MODERN Full Stack App for FREE w/ NextJS 12, Typescript, Prisma and more](https://www.youtube.com/watch?v=PKy2lYEnhgs)
 
-- [Timestamp 49:54](https://youtu.be/PKy2lYEnhgs?t=2994)
+- [Timestamp 1:14:55](https://youtu.be/PKy2lYEnhgs?t=4495)
 
 ## TODO
 
-- [x] Change to a R6 related API;
+- [ ] Change to a R6 related API;
 
 ### Not using:
 
 [Tailwind just-in-time mode](https://v2.tailwindcss.com/docs/just-in-time-mode)
+
+[https://www.youtube.com/watch?v=syEWlxVFUrY](https://www.youtube.com/watch?v=syEWlxVFUrY)
