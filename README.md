@@ -17,13 +17,15 @@ pscale connect roundest fab-dev --port 3310
 
 [github/colinhacks >>> Zod - TypeScript-first schema validation with static type inference](https://github.com/colinhacks/zod)
 
+[blog.tericcabrel >>> Understand the shadow database feature of Prisma ORM](https://blog.tericcabrel.com/understand-the-shadow-database-feature-prisma/)
+
 [stackoverflow >>> Turning an SVG string into an image in a React component](https://stackoverflow.com/questions/44900569/turning-an-svg-string-into-an-image-in-a-react-component)
 
 ## Inspiration
 
 [Theo - ping․gg >>> Building a MODERN Full Stack App for FREE w/ NextJS 12, Typescript, Prisma and more](https://www.youtube.com/watch?v=PKy2lYEnhgs)
 
-- [Timestamp 1:14:55](https://youtu.be/PKy2lYEnhgs?t=4495)
+- [Timestamp 1:17:17](https://youtu.be/PKy2lYEnhgs?t=4637)
 
 ## TODO
 
