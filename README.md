@@ -2,9 +2,11 @@
 
 ## Db commands
 
+Proxy commands
+
 ```ps
-pscale connect roundest main --port 3309
-pscale connect roundest fab-dev --port 3310
+pscale connect roundest [main-db] --port 3309
+pscale connect roundest [shadow-db] --port 3310
 ```
 
 ## Important links
