@@ -23,6 +23,8 @@ pscale connect roundest [shadow-db] --port 3310
 
 [stackoverflow >>> Turning an SVG string into an image in a React component](https://stackoverflow.com/questions/44900569/turning-an-svg-string-into-an-image-in-a-react-component)
 
+[davidparks >>> Deploying a PlanetScale, Next.js & Prisma App to Vercel](https://davidparks.dev/blog/planetscale-deployment-with-prisma/#deploying)
+
 ## Inspiration
 
 [Theo - ping․gg >>> Building a MODERN Full Stack App for FREE w/ NextJS 12, Typescript, Prisma and more](https://www.youtube.com/watch?v=PKy2lYEnhgs)

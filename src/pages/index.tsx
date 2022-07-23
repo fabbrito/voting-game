@@ -27,8 +27,14 @@ const Home: NextPage = () => {
   // if (!test.isLoading) console.log(test);
   // <img src={`data:image/svg+xml;utf8,${data.svg}`} alt={data.name} />
 
+  const fireMutation = trpc.useMutation(["cast-vote"]);
+
   const voteForRoundest = (selected: number) => {
-    // TODO: Fire mutations to persist changes
+    if (selected === firstId) {
+      fireMutation.mutate({ votedFor: firstId, votedAgainst: secondId });
+    } else if (selected === secondId) {
+      fireMutation.mutate({ votedFor: secondId, votedAgainst: firstId });
+    }
     updateIds(getOptionsForVote(MAX_VAL));
   };
 
